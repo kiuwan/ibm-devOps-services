@@ -1,12 +1,12 @@
 ibm-devOps-services
 ===================
 
-This project includes files needed to execute static analysis in Kiuwan from IBM DevOps Services.
+This project includes files needed to execute Kiuwan static analysis from IBM DevOps Services (beta integration).
 
-Follow these instructions to configure your DevOps Services Project to analyze your project with Kiuwan.
+Follow these instructions to configure your DevOps Services Project to analyze your project's source code with Kiuwan.
 
 1. Create a new project in DevOps Services.
-2. In 'BUILD & DEPLOY' view, click on gear icon in the 'Pipeline' to configure the stage.
+2. In 'BUILD & DEPLOY' view, create a new stage or click on the gear icon in the 'Pipeline' to configure the build stage.
 2. Type the stage name.
 3. Select 'Shell Script' builder.
 4. Select your branch.
@@ -30,9 +30,9 @@ Follow these instructions to configure your DevOps Services Project to analyze y
 		#Retrieve and execute the analysis with Kiuwan Local Analyzer
 		curl -L https://raw.githubusercontent.com/kiuwan/ibm-devOps-services/master/scripts/kiuwan.sh | bash
 
-	<sub><sup>\* Replace the fragments enclosed in braces with your configuration.</sup></sub> 
+	<sub><sup>\* Replace the fragments enclosed in curly braces with your configuration.</sup></sub> 
 
-7. Configure the remaining options as you desire and click on 'Save'.
+7. Configure the remaining options if needed and click 'Save'.
 8. Launch a build and check the results.
 
 #####SOME NOTES
@@ -55,7 +55,7 @@ Follow these instructions to configure your DevOps Services Project to analyze y
    Rules are:
 
       If excludes provided, any input file matching one of the patterns will be ignored.
-      If includes provided and no exclude pattern rejected the file, to be accepted input file must match at least one include pattern.
+      If includes provided and no exclude pattern rejected the file, to be accepted as input file it must match at least one include pattern.
       If excludes provided but no explicit includes, any input file not rejected by one exclude pattern will be accepted.
       If includes provided with no explicit excludes, input file will be accepted only when matches at least one include pattern.
       If both explicit includes and excludes, excludes are checked before includes; a file will be accepted if does not match any exclude pattern but matches at least one include pattern.
